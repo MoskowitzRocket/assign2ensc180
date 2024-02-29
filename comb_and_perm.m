@@ -26,4 +26,5 @@ T = table(n_results,k_results,c_nk,p_nk,'VariableNames',{'n','k','C(n,k)','P(n,k
 
 
 disp(T);
+%test
 
