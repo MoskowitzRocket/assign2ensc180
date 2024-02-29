@@ -2,16 +2,28 @@ clear all
 close all
 clc
 
+n_results = [];
+k_results = [];
+c_nk = [];
+p_nk = [];
 
-n = 2:5;
+for n = 2:5
+    for k = 0:n
 
-k1 = 0:n(1)
-k2 = 0:n(2)
-k3 = 0:n(3)
-k4 = 0:n(4)
+        combination = nchoosek(n,k);
 
-k = [k1 k2 k3 k4]
+        permutations = factorial(n)/factorial(n-k);
+
+        n_results = [n_results; n];
+        k_results = [k_results; k];
+        c_nk = [c_nk; combination];
+        p_nk = [p_nk; permutations];
+        
+    end
+end
+
+T = table(n_results,k_results,c_nk,p_nk,'VariableNames',{'n','k','C(n,k)','P(n,k)'});
 
 
+disp(T);
 
-combinations(2:5,0:2)
